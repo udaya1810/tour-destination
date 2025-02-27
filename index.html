@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srinagar Gulmarg Sonmarg Tour Package</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .tour-title {
+            color: black;
+            margin-top: 20px;
+        }
+        .price {
+            color: #00695c;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .per-person {
+            color: black;
+            font-size: 18px;
+            display: block;
+        }
+        .btn-custom {
+            background-color: #FF0000;
+            color: white;
+            width: 260px; 
+        }
+        .btn-custom:hover {
+            background-color: #E53935;
+        }
+        .top-right-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .left-image {
+            grid-row: span 2;
+            width: 460px;
+        }
+        .right-image {
+            grid-column: 3;
+            grid-row: 1 / 3;
+            width: 460px;
+        }
+        .center-top-image, .center-bottom-image {
+            grid-column: 2;
+            width: 350px;
+        }
+        .image-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .package-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 350px;
+        }
+        .btn-read-more {
+            background-color: #FF0000;
+            color: white;
+            width: 150px;
+            border-radius: 5px;
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+        .btn-read-more:hover {
+            background-color: #E53935;
+        }
+        .btn-quote {
+            background-color: #FF0000;
+            color: white;
+            width: 100%;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .btn-quote:hover {
+            background-color: #E53935;
+        }
+        .package-summary {
+            margin-top: 20px;
+        }
+        .package-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .package-summary th, .package-summary td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .package-summary th {
+            background-color: #FF0000;
+            color: white;
+        }
+
+ .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Aligns content and button at the bottom */
+}
+
+.timeline-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is spaced properly */
+}
+
+.info-btn {
+    width: 80px; /* Reduce width */
+    padding: 4px 8px; /* Adjust padding for a smaller size */
+    font-size: 12px; /* Reduce font size if needed */
+}
+
+.end-of-day {
+    font-weight: bold;
+    color: red;
+    margin-top: auto; /* Pushes it to the bottom */
+    align-self: flex-start; /* Aligns it to the left */
+}
+
+.get-quotes {
+    align-self: flex-end; /* Ensures button is at the bottom */
+}
+
+.ps-3 {
+        padding-left: 1.5rem; /* Adds padding to left for nested items */
+    }
+    .accommodation-list li, 
+    .meals-list li,
+    .transportation-list li {
+        margin-right: 2rem; /* Moves the list items to the right */
+    }
+    .read-more-item {
+        display: none; /* Initially hides the extra items */
+    }
+    .d-none {
+        display: none !important;
+    }
+    /* Read More button styling */
+    .read-more-btn {
+        border: none;
+        background: none;
+    }
+    .read-more-text, .read-less-text {
+        cursor: pointer;
+    }
+
+    .d-none {
+        display: none !important;
+    }
+
+      /* Travel details card styling */
+    .card {
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        position: relative;
+        padding-top: 20px;
+        overflow: hidden;
+    }
+    .card-body {
+        padding: 2rem;
+    }
+
+    /* Package Box - Merged at Top-Left */
+    .package-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #dc3545;
+        color: white;
+        padding: 8px 15px;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 10px 0 10px 0;
+    }
+
+    /* Small Info Boxes */
+    .small-box {
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .verified-box {
+        background-color: #d4edda;
+    }
+    .premium-box {
+        background-color: #ffeeba;
+    }
+    .trustseal-box {
+        background-color: #cce5ff;
+    }
+    .certified-box {
+        background-color: #e2e3e5;
+    }
+
+    /* Buttons styling */
+    .get-quotes-btn {
+        background-color: transparent;
+        border: 2px solid red;
+        color: red;
+    }
+    .get-quotes-btn:hover {
+        background-color: red;
+        color: white;
+    }
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
+    }
+    .btn-danger:hover {
+        background-color: #c82333;
+    }
+
+    /* Ratings Star Styling */
+    .rating-star {
+        color: gold;
+        font-size: 20px;
+        margin-right: 5px;
+    }
+
+     /* Main Card Styling */
+     .package-card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        background: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        position: relative;
+    }
+
+    /* Package Image */
+    .package-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+
+    /* Share Icon */
+    .share-icon {
+        font-size: 18px;
+        color: #007bff;
+        cursor: pointer;
+    }
+
+    /* Icons Styling (Cup & Cab) */
+    .icon-style {
+        font-size: 18px;
+        color: #FF5722;
+        cursor: pointer;
+    }
+
+    /* Attached Small Card */
+    .attached-card {
+        background: #f8f9fa;
+        border-top: 2px solid #007bff;
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Per Person & Rating */
+    .per-person, .rating {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    /* Star Icon */
+    .star-icon {
+        color: gold;
+        font-size: 14px;
+    }
+
+    /* Price & Reviews */
+    .price {
+        font-size: 18px;
+        font-weight: bold;
+        color: #d32f2f;
+    }
+
+    .reviews {
+        font-size: 14px;
+        color: #555;
+    }
+
+    /* Taxes Text */
+    .tax-text {
+        font-size: 12px;
+        color: #888;
+        margin-top: -5px;
+    }
+
+      /* Button Styling */
+      .btn-quote, .btn-details {
+        border: none;
+        padding: 10px 0;
+        font-size: 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        width: 100%;
+    }
+
+    .btn-quote {
+        background: #007bff;
+        color: white;
+    }
+
+    .btn-details {
+        background: #28a745;
+        color: white;
+    }
+
+    .btn-quote:hover {
+        background: #0056b3;
+    }
+
+    .btn-details:hover {
+        background: #1e7e34;
+    }
+    </style>
+</head>
+
+<script>
+    function toggleContent() {
+        var content = document.getElementById("more-content");
+        var button = document.getElementById("toggle-btn");
+    
+        if (content.style.display === "none") {
+            content.style.display = "block";
+            button.innerText = "Read Less";
+        } else {
+            content.style.display = "none";
+            button.innerText = "Read More";
+        }
+    }
+
+
+    function toggleReadMore(button) {
+        const content = button.previousElementSibling;
+        content.classList.toggle("d-none");
+
+        // Toggle button text
+        button.querySelector(".read-more-text").classList.toggle("d-none");
+        button.querySelector(".read-less-text").classList.toggle("d-none");
+    }
+
+   
+</script>
+
+<body>
+
+    <div class="container mt-4 position-relative">
+        <button class="btn btn-custom top-right-button">Get Quotes</button>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="tour-title">Srinagar Gulmarg Sonmarg Day Trip Tour Package</h2>
+                <h2>5 Days for 2 PAX.</h2>
+                <p class="price d-inline">₹ (INR) 15,000 </p>
+                <span class="per-person">/Per Person</span>
+                <h6><i class="bi bi-geo-alt-fill" style="color: #FF0000;"></i> Gulmarg, Sonmarg, Srinagar</h6>
+
+                <!-- Image Grid -->
+                <div class="image-grid">
+                    <div class="left-image">
+                        <img src="srinagar5.webp" alt="Left Image">
+                    </div>
+                    <div class="center-top-image">
+                        <img src="srinagar3.jpg" alt="Center Top Image">
+                    </div>
+                    <div class="center-bottom-image">
+                        <img src="srinagar4.jpg" alt="Center Bottom Image">
+                    </div>
+                    <div class="right-image">
+                        <img src="srinagar1.jpg" alt="Right Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <!-- Grid Container -->
+       <div class="container mt-4">
+        <div class="row">
+            <!-- Left Side - About Package (70%) -->
+            <div class="col-md-7">
+                <h5>About Package</h5>
+                <p>Book you lucrative tour package of Gulmarg, Sonmarg, Srinagar for 4 Nights, 5 Days offered by Travel-yatra.com (A unit of Flying bird travel pvt. ltd.) at  9,086 /Per Person . Find detailed day wise itinerary of Gulmarg, Sonmarg, Srinagar tour package below which will be further customized once you enquire with us and share you trip details.</p>
+            
+                <div id="more-content" style="display: none;">
+                    <p>Enquire for an exciting Gulmarg, Sonmarg, Srinagar sightseeing tour which will cover some of the most exciting places to visit near and at Gulmarg, Sonmarg, Srinagar.</p>
+                    <p>If you have any query regarding booking of your Gulmarg, Sonmarg, Srinagar tour package then please call us at our 24x7 helpline number present at our profile page - Travel-yatra.com (A unit of Flying bird travel pvt. ltd.) and to book your tour to Gulmarg, Sonmarg, Srinagar please send your trip details in our tour package booking form.</p>
+                    <p>To enjoy your Gulmarg, Sonmarg, Srinagar trip don't forget to get the following activites added in your Gulmarg, Sonmarg, Srinagar itinerary.</p>
+                    <p>Dear Sir / Ma’am,</p>
+                    <p>Greetings from Travel Yatra!!!</p>
+                    <p>A unit of Flying Bird Travel Private Limited.</p>
+                    <h2 class="mt-3">Exploring the Beauty of Srinagar, Gulmarg, and Sonmarg: A 5-Day Journey</h2>
+                    <p>Embark on a captivating 5-day tour package that takes you through the mesmerizing landscapes of Srinagar, Gulmarg, and Sonmarg. Immerse yourself in nature’s splendor and experience the essence of Kashmir’s picturesque beauty.</p>
+                </div>
+
+
+
+                <div class="d-flex justify-content-end mt-3">
+                    <button id="toggle-btn" class="btn btn-read-more" onclick="toggleContent()">Read More</button>
+                </div>
+
+                <!-- Package Summary Table -->
+                <div class="package-summary mt-4">
+                    <table>
+                        <tr><th colspan="2">Package Summary</th></tr>
+                        <tr><td>Day 1</td><td> Day 1: Pick up and Arrival Srinagar</td></tr>
+                        <tr><td>Day 2</td><td> Day 2: Srinagar – Local Sightseeing (Approx. 50 Kms)</td></tr>
+                        <tr><td>Day 3</td><td> Day 3: Srinagar to Gulmarg (Approx. 56 Kms)</td></tr>
+                        <tr><td>Day 4</td><td>Day 4: Gulmarg to Pahalgam (Approx. 149 Kms)</td></tr>
+                        <tr><td>Day 5</td><td>Day 5: Pahalgam to Srinagar – Departure</td></tr>
+                    </table>
+                    <p>To enjoy you Gulmarg, Sonmarg, Srinagar trip don't forget to get the following activites added in your Gulmarg, Sonmarg, Srinagar.</p>
+                    
+                    <div class="container mt-5">
+                        <h3>Detailed Day Wise Itinerary</h3>
+                        <div class="timeline">
+                    
+                            <!-- Day 1 -->
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h4 class="text-danger">Day 1</h4>
+                                    <div class="title-container">
+                                        <button class="btn btn-sm btn-danger info-btn">Info</button>
+                                        <h5 class="mt-2 d-inline">  Day 1: Pick up and Arrival Srinagar</h5>
+                                    </div>
+                                    <p>Welcome !! Upon your arrival at Srinagar Airport, our representative will warmly greet you and assist in transferring you to a Deluxe Houseboat. Spend the afternoon at leisure, engaging in personal activities, and relishing the picturesque setting. Overnight stay at the Houseboat.</p>
+                                    <span class="end-of-day">End of Day</span>
+                                </div>
+                                <button class="btn btn-danger get-quotes">Get Quotes</button>
+                            </div>
+                    
+                            <!-- Day 2 -->
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h4 class="text-danger">Day 2</h4>
+                                    <div class="title-container">
+                                        <button class="btn btn-sm btn-danger info-btn">Info</button>
+                                        <h5 class="mt-2 d-inline"> Day 2: Srinagar – Local Sightseeing (Approx. 50 Kms)</h5>
+                                    </div>
+                                    <p>Embark on a half-day excursion to the renowned Mughal Gardens – Nishat Bagh and Shalimar Bagh. Experience the delightful essence of these gardens, symbols of Mughal opulence and grandeur. Following a hot lunch (optional), indulge in a tranquil Shikara ride on the mesmerizing Dal Lake, exploring its captivating surroundings. Overnight stay at the Houseboat.</p>
+                                    <span class="end-of-day">End of Day</span>
+                                </div>
+                                <button class="btn btn-danger get-quotes">Get Quotes</button>
+                            </div>
+                    
+                            <!-- Day 3 -->
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h4 class="text-danger">Day 3</h4>
+                                    <div class="title-container">
+                                        <button class="btn btn-sm btn-danger info-btn">Info</button>
+                                        <h5 class="mt-2 d-inline">Day 3: Srinagar to Gulmarg (Approx. 56 Kms)</h5>
+                                    </div>
+                                    <p>Post breakfast, venture towards Gulmarg, a captivating summer resort renowned for its scenic beauty. At an elevation of 8700 ft, revel in the panoramic views and indulge in various activities. Witness the highest golf course globally, relishing the splendor of grassy slopes adorned with wildflowers. Optionally, take the exhilarating Gondola Cable Car ride to Kongdori and Apharwat range, offering breathtaking views of the Himalayas. Overnight stay in Gulmarg.</p>
+                                    <span class="end-of-day">End of Day</span>
+                                </div>
+                                <button class="btn btn-danger get-quotes">Get Quotes</button>
+                            </div>
+                    
+                            <!-- Day 4 -->
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h4 class="text-danger">Day 4</h4>
+                                    <div class="title-container">
+                                        <button class="btn btn-sm btn-danger info-btn">Info</button>
+                                        <h5 class="mt-2 d-inline">Day 4: Gulmarg to Pahalgam (Approx. 149 Kms)</h5>
+                                    </div>
+                                    <p>After breakfast, depart from Gulmarg to Pahalgam, nestled at 2440 meters in the Vale of Kashmir. En route, explore the saffron fields and Avantipur ruins, housing an ancient temple dating back eleven centuries. Reach Pahalgam by lunchtime, known as the Indian Film Industry’s favorite location. Spend the rest of the day embracing nature’s charm. Overnight stay at a hotel in Pahalgam.</p>
+                                    <span class="end-of-day">End of Day</span>
+                                </div>
+                                <button class="btn btn-danger get-quotes">Get Quotes</button>
+                            </div>
+                    
+                            <!-- Day 5 -->
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h4 class="text-danger">Day 5</h4>
+                                    <div class="title-container">
+                                        <button class="btn btn-sm btn-danger info-btn">Info</button>
+                                        <h5 class="mt-2 d-inline"> Day 5: Pahalgam to Srinagar – Departure</h5>
+                                    </div>
+                                    <p>Bid adieu to the enchanting beauty of Pahalgam and head back to Srinagar. Our team will ensure your timely transfer to the airport for your onward flight, concluding this mesmerizing 5-day journey through Kashmir’s paradisiacal landscapes.</p>
+                                    <span class="end-of-day">End of Day</span>
+                                </div>
+                                <button class="btn btn-danger get-quotes">Get Quotes</button>
+                            </div>
+                    
+   <!-- Inclusion Card -->
+<div class="card mt-3">
+    <div class="card-header bg-light">
+        <h5 class="fw-bold mb-0 ">Inclusion</h5> <!-- Bold & Centered Title -->
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <!-- First Column -->
+            <div class="col-md-6">
+                <p><i class="bi bi-check-circle-fill text-success"></i> Private Cab Transfers</p>
+                <p><i class="bi bi-check-circle-fill text-success"></i> Sightseeing tour</p>
+                <p><i class="bi bi-check-circle-fill text-success"></i> Breakfast</p>
+                <p><i class="bi bi-check-circle-fill text-success"></i> Welcome Drinks</p>
+            </div>
+
+            <!-- Second Column -->
+            <div class="col-md-6">
+                <p><i class="bi bi-check-circle-fill text-success"></i> Accommodation</p>
+                <p><i class="bi bi-check-circle-fill text-success"></i> Dinner</p>
+                <p><i class="bi bi-check-circle-fill text-success"></i> Tolls</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Exclusion Card -->
+<div class="card mt-3">
+    <div class="card-header bg-light">
+        <h5 class="fw-bold mb-0 ">Exclusion</h5> <!-- Bold & Centered Title -->
+    </div>
+    <div class="card-body">
+        <p><i class="bi bi-x-circle-fill text-danger"></i> Anything not mentioned in inclusions</p>
+    </div>
+</div>
+
+<!-- Trip Information & Conditions Section -->
+<div class="container mt-5">
+    <h3 class="fw-bold">Trip Information & Conditions</h3>
+
+    <!-- Inclusion Section -->
+    <h5 class="mt-3 fw-bold">
+        <span class="text-danger">*</span> Inclusion
+    </h5>
+
+    <ul class="list-unstyled">
+        <li class="fw-bold"><i class="bi bi-dot"></i> Accommodation:
+            <ul class="ps-3">
+                <li> 2 Nights Hotel Accommodations - Srinagar</li>
+                <li> 1 Night Hotel Accommodations - Houseboat</li>
+                <li> 1 Night Hotel Accommodations - Pahalgam</li>
+            </ul>
+        </li>
+        <li class="fw-bold mt-2"><i class="bi bi-dot"></i> Meals:
+            <ul class="ps-3">
+                <li> Total 5 Breakfasts + 5 Dinners</li>
+            </ul>
+        </li>
+        <li class="fw-bold mt-2"><i class="bi bi-dot"></i> Transportations:
+            <ul class="ps-3">
+                <li></i> Dzire for Srinagar Pickup & Drop</li>
+                <li> All sightseeing according to the itinerary</li>
+                <li> 1 Hour Shikara Ride</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- Read More / Read Less Button (Right-Aligned) -->
+    <div class="text-end">
+        <button class="btn text-danger fw-bold read-more-btn" onclick="toggleReadMore(this)">
+            <span class="read-more-text">Read More <i class="bi bi-plus-circle"></i></span>
+            <span class="read-less-text d-none">Read Less <i class="bi bi-dash-circle"></i></span>
+        </button>
+    </div>
+
+    <!-- Exclusion Section -->
+    <h5 class="mt-3 fw-bold">
+        <span class="text-danger">*</span> Exclusion
+    </h5>
+    <p class="bi bi-dot">Any Kind of Personal Expenses or Optional Tours / Extra Meals Ordered. Monument Entrances, Rafting & Camel Safari Charges. Anything not specifically mentioned under the head “Prices included”. Tips, Insurance, Laundry, Phone Calls. Any Kind of Drinks (Alcoholic, Mineral, Aerated) Cost incidental to any change in the itinerary/ stay on account of flight cancellation due to bad weather, ill health, roadblocks, and/or any factors beyond control. GST 5%</p>
+    <p class="bi bi-dot">Monument Entrances, Rafting & Camel Safari Charges.</p>
+    <p class="bi bi-dot">Anything not specifically mentioned under the head “Prices included”.</p>
+    <p class="bi bi-dot">Tips, Insurance, Laundry, Phone Calls</p>
+    <p class="bi bi-dot">Any Kind of Drinks (Alcoholic, Mineral, Aerated)</p>
+    <p class="bi bi-dot">Cost incidental to any change in the itinerary/ stay on account of flight cancellation due to bad weather, ill health, roadblocks, and/or any factors beyond control.</p>
+    <p class="bi bi-dot">GST 5%</p>
+
+     <!-- Read More / Read Less Button (Right-Aligned) -->
+     <div class="text-end">
+        <button class="btn text-danger fw-bold read-more-btn" onclick="toggleReadMore(this)">
+            <span class="read-more-text">Read More <i class="bi bi-plus-circle"></i></span>
+            <span class="read-less-text d-none">Read Less <i class="bi bi-dash-circle"></i></span>
+        </button>
+    </div>
+
+
+    <h5 class="mt-3 fw-bold">
+        <span class="text-danger">*</span>  How to Pay:
+    </h5>
+    <p>Account Name - Flying Bird Travel Private Limited</p>
+    <p>Account Type - Current</p>
+    <p>Account Number - 2221248545682431</p>
+    <p>IFSC Code - AUBL0002485</p>
+    <p>Bank Branch - Sector 63 Noida & Noida</p>
+
+       <!-- Read More / Read Less Button (Right-Aligned) -->
+       <div class="text-end">
+        <button class="btn text-danger fw-bold read-more-btn" onclick="toggleReadMore(this)">
+            <span class="read-more-text">Read More <i class="bi bi-plus-circle"></i></span>
+            <span class="read-less-text d-none">Read Less <i class="bi bi-dash-circle"></i></span>
+        </button>
+    </div>
+
+    <h5 class="mt-3 fw-bold">
+        <span class="text-danger">*</span>  Notice:
+    </h5>
+    <p class="bi bi-dot">The vehicle will be parked in the monument's parking area, and from there, you will need to proceed on foot.</p>
+    <p class="bi bi-dot">Air conditioning in the transport will not be operational in hilly areas.</p>
+    <p class="bi bi-dot">In case the vehicle cannot reach the monument due to roadblocks caused by a natural disaster, the booking amount will not be reduced or refunded.</p>
+    <p class="bi bi-dot">Given cost is not applicable (at/for) the festival time period.</p>
+    
+    <!-- Read More / Read Less Button (Right-Aligned) -->
+    <div class="text-end">
+        <button class="btn text-danger fw-bold read-more-btn" onclick="toggleReadMore(this)">
+            <span class="read-more-text">Read More <i class="bi bi-plus-circle"></i></span>
+            <span class="read-less-text d-none">Read Less <i class="bi bi-dash-circle"></i></span>
+        </button>
+    </div>
+</div>  
+     
+<h5 class="mt-3 fw-bold">
+    <span class="text-danger">*</span>   CANCELLATION TERMS:
+</h5>
+<p class="bi bi-dot">If the program commencement is more than 30 days away, 25% of the total booking amount will be charged.</p>
+<p class="bi bi-dot">If the program commencement is between 15 to 30 days away, 50% of the total booking amount will be charged.</p>
+<p class="bi bi-dot">If the program commencement is between 8 to 14 days away, 75% of the total booking amount will be charged.</p>
+<p class="bi bi-dot">If the program commencement is less than 8 days away or during the program, 100% of the total booking amount will be charged.</p>
+
+
+  <!-- Read More / Read Less Button (Right-Aligned) -->
+  <div class="text-end">
+    <button class="btn text-danger fw-bold read-more-btn" onclick="toggleReadMore(this)">
+        <span class="read-more-text">Read More <i class="bi bi-plus-circle"></i></span>
+        <span class="read-less-text d-none">Read Less <i class="bi bi-dash-circle"></i></span>
+    </button>
+</div>
+</div> 
+
+<!-- Travel Details Card Section -->
+<div class="container mt-5 position-relative">
+    <div class="card">
+        <!-- Package By Box (Merged at Top-Left Corner) -->
+        <div class="package-box">Package By</div>
+
+        <div class="card-body">
+            <h5 class="card-title">Travel-yatra.com (A unit of Flying Bird Travel Pvt. Ltd.)</h5>
+
+            <!-- Icons and Info Boxes (Middle) -->
+            <div class="row mt-3">
+                <div class="col-3">
+                    <div class="small-box verified-box">
+                        <i class="bi bi-check-circle"></i> Verified
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="small-box premium-box">
+                        <i class="bi bi-star-fill"></i> Premium
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="small-box trustseal-box">
+                        <i class="bi bi-shield-lock"></i> TrustSEAL Verified
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="small-box certified-box">
+                        <i class="bi bi-award"></i> Certified Partner
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ratings (Single Star Only) -->
+            <div class="row mt-3">
+                <div class="col-12">
+                    <span class="rating-star">&#9733;</span> <strong>4.4</strong> (56 Reviews) - Google
+                </div>
+                <div class="col-12">
+                    <span class="rating-star">&#9733;</span> <strong>4.2</strong> (9 Reviews) - Tripclap
+                </div>
+            </div>
+
+            <!-- Contact and Get Quotes Buttons -->
+            <div class="row mt-4">
+                <div class="col-6">
+                    <button class="btn btn-danger w-100">Contact Agent</button>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-outline-danger w-100 get-quotes-btn">Get Quotes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Q & A Card Section -->
+<div class="container mt-5">
+    <div class="card position-relative">
+        <!-- Q & A Heading (Merged with Card) -->
+        <div class="position-absolute top-0 start-0 bg-primary text-white px-3 py-1 rounded-bottom-end">
+            Q & A
+        </div>
+
+        <div class="card-body">
+            <!-- Box with Question & Button in Single Row -->
+            <div class="d-flex justify-content-between align-items-center border p-3 rounded">
+                <p class="mb-0">Didn't get what you are looking for?</p>
+                <button class="btn btn-primary">Post a Question</button>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h3 class="fw-bold">More Tour Packages from Travel-yatra.com (A unit of Flying Bird Travel Pvt. Ltd.)</h3>
+    
+    <div class="row g-4"> 
+        <!-- First Card -->
+        <div class="col-md-6 d-flex">
+            <div class="package-card flex-fill p-3 border rounded shadow">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <img src="tour-image.jpg" alt="Tour Image" class="package-img">
+                        <h5 class="mb-0 ms-2">Amazing Europe Tour</h5>
+                    </div>
+                    <i class="bi bi-share-fill share-icon"></i>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-start align-items-center ms-2">
+                    <i class="bi bi-cup-fill icon-style me-3"></i>
+                    <i class="bi bi-car-front-fill icon-style"></i>
+                </div>
+                <hr>
+                <p><i class="bi bi-clock-fill" style="color: #FF0000;"></i> <strong>7 Nights / 8 Days</strong></p>
+                <p><i class="bi bi-geo-alt-fill" style="color: #FF0000;"></i> Destinations: France, Italy, Switzerland</p>
+
+                <div class="attached-card">
+                    <div class="d-flex justify-content-between">
+                        <p class="per-person">Per Person</p>
+                        <p class="rating"><i class="bi bi-star-fill star-icon"></i> 4.2 Ratings</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p class="price">₹ 9,086</p>
+                        <p class="reviews">(56 Reviews)</p>
+                    </div>
+                    <p class="tax-text">*Excluding applicable taxes</p>
+                    <div class="d-flex">
+                        <button class="btn btn-quote flex-fill">Get Quotes</button>
+                        <button class="btn btn-details flex-fill ms-2">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Card -->
+        <div class="col-md-6 d-flex">
+            <div class="package-card flex-fill p-3 border rounded shadow">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <img src="tour-image.jpg" alt="Tour Image" class="package-img">
+                        <h5 class="mb-0 ms-2">Amazing Europe Tour</h5>
+                    </div>
+                    <i class="bi bi-share-fill share-icon"></i>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-start align-items-center ms-2">
+                    <i class="bi bi-cup-fill icon-style me-3"></i>
+                    <i class="bi bi-car-front-fill icon-style"></i>
+                </div>
+                <hr>
+                <p><i class="bi bi-clock-fill" style="color: #FF0000;"></i> <strong>7 Nights / 8 Days</strong></p>
+                <p><i class="bi bi-geo-alt-fill" style="color: #FF0000;"></i> Destinations: France, Italy, Switzerland</p>
+
+                <div class="attached-card">
+                    <div class="d-flex justify-content-between">
+                        <p class="per-person">Per Person</p>
+                        <p class="rating"><i class="bi bi-star-fill star-icon"></i> 4.2 Ratings</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p class="price">₹ 9,086</p>
+                        <p class="reviews">(56 Reviews)</p>
+                    </div>
+                    <p class="tax-text">*Excluding applicable taxes</p>
+                    <div class="d-flex">
+                        <button class="btn btn-quote flex-fill">Get Quotes</button>
+                        <button class="btn btn-details flex-fill ms-2">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third Card -->
+        <div class="col-md-6 d-flex">
+            <div class="package-card flex-fill p-3 border rounded shadow">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <img src="tour-image.jpg" alt="Tour Image" class="package-img">
+                        <h5 class="mb-0 ms-2">Amazing Europe Tour</h5>
+                    </div>
+                    <i class="bi bi-share-fill share-icon"></i>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-start align-items-center ms-2">
+                    <i class="bi bi-cup-fill icon-style me-3"></i>
+                    <i class="bi bi-car-front-fill icon-style"></i>
+                </div>
+                <hr>
+                <p><i class="bi bi-clock-fill" style="color: #FF0000;"></i> <strong>7 Nights / 8 Days</strong></p>
+                <p><i class="bi bi-geo-alt-fill" style="color: #FF0000;"></i> Destinations: France, Italy, Switzerland</p>
+
+                <div class="attached-card">
+                    <div class="d-flex justify-content-between">
+                        <p class="per-person">Per Person</p>
+                        <p class="rating"><i class="bi bi-star-fill star-icon"></i> 4.2 Ratings</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p class="price">₹ 9,086</p>
+                        <p class="reviews">(56 Reviews)</p>
+                    </div>
+                    <p class="tax-text">*Excluding applicable taxes</p>
+                    <div class="d-flex">
+                        <button class="btn btn-quote flex-fill">Get Quotes</button>
+                        <button class="btn btn-details flex-fill ms-2">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fourth Card -->
+        <div class="col-md-6 d-flex">
+            <div class="package-card flex-fill p-3 border rounded shadow">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <img src="tour-image.jpg" alt="Tour Image" class="package-img">
+                        <h5 class="mb-0 ms-2">Amazing Europe Tour</h5>
+                    </div>
+                    <i class="bi bi-share-fill share-icon"></i>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-start align-items-center ms-2">
+                    <i class="bi bi-cup-fill icon-style me-3"></i>
+                    <i class="bi bi-car-front-fill icon-style"></i>
+                </div>
+                <hr>
+                <p><i class="bi bi-clock-fill" style="color: #FF0000;"></i> <strong>7 Nights / 8 Days</strong></p>
+                <p><i class="bi bi-geo-alt-fill" style="color: #FF0000;"></i> Destinations: France, Italy, Switzerland</p>
+
+                <div class="attached-card">
+                    <div class="d-flex justify-content-between">
+                        <p class="per-person">Per Person</p>
+                        <p class="rating"><i class="bi bi-star-fill star-icon"></i> 4.2 Ratings</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p class="price">₹ 9,086</p>
+                        <p class="reviews">(56 Reviews)</p>
+                    </div>
+                    <p class="tax-text">*Excluding applicable taxes</p>
+                    <div class="d-flex">
+                        <button class="btn btn-quote flex-fill">Get Quotes</button>
+                        <button class="btn btn-details flex-fill ms-2">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- Right Side - Package Cards (30%) -->
+            <div class="col-md-5">
+                <!-- Pricing Card -->
+                <div class="package-card mb-3">
+                    <p class="price">
+                        ₹ (INR) 9,086 <span class="per-person">/Per Person</span>
+                        <span style="font-size: 12px; color: #888; display: block;">*Excluding applicable taxes</span>
+                    </p>
+                    <hr>
+                    <p><i class="bi bi-clock-fill" style="color: #FF0000;"></i> <strong>4 Nights / 5 Days</strong></p>
+                    <hr>
+                    <button class="btn btn-quote">Get Quotes</button>
+                </div>
+
+                <!-- Help & Support Card -->
+                <div class="package-card mb-3">
+                    <h5>Help & Support</h5>
+                    <hr>
+                    <h6>Call Us Now</h6>
+                    <h4><i class="bi bi-telephone-fill" style="color: #FF0000;"></i> +91-8069145442</h4>
+                </div>
+
+                <!-- Package By Card -->
+                <div class="package-card">
+                    <h5 class="mb-2">Package By</h5>
+                    <hr>
+                    <h6 class="mb-2">Travel-yatra.com (A unit of Flying Bird Travel Pvt. Ltd.)</h6>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
